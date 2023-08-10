@@ -69,10 +69,11 @@ nav a {
 
 footer {
   padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-bottom: 4rem;
 }
 
 footer p {
+  margin-top: 1rem;
   margin-bottom: .25rem;
 }
 
