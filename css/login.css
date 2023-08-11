@@ -9,10 +9,16 @@
     background-color: #fbfdff;
     padding-top: 3rem;
     }
+    
     .login {
     margin: 20px auto;
     width: 300px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     }
+
     .login-screen {
     background-color: orange;
     padding: 20px;
@@ -21,31 +27,58 @@
     
     .app-title {
     text-align: center;
-    color: #464444;
+    color: #3d3b3b;
+    position: relative;
+    margin-bottom: 40px;
+    }
+
+    .app-title h1{
+      font-weight: 535;
+      font-size:25px;
+    }
+
+    .app-title::after{
+      content: '';
+      width: 50px;
+      height: 4px;
+      border-radius: 3px;
+      background: rgb(62, 61, 61);
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
     }
     
     .login-form {
     text-align: center;
+    align-items: center;
     }
     .control-group {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    background: #eaeaea;
+    border-radius: 3px;
     }
     
     input {
-    text-align: center;
-    background-color: #ECF0F1;
-    border: 2px solid transparent;
-    border-radius: 3px;
+    text-align:center;
+    background-color:transparent;
+    border: 0;
+    outline: 0;
     font-size: 16px;
     font-weight: 200;
-    padding: 10px 0;
-    width: 250px;
+    padding: 10px;
+    width: 100%;
     transition: border .5s;
+    margin-left: -25px;
+    line-height: 10px;
     }
     
-    input:focus {
-    border: 2px solid #3498DB;
-    box-shadow: none;
+
+    .control-group i{
+      margin-left: 15px;
+      color: #9999
     }
     
     .btn {
@@ -53,7 +86,7 @@
       background: #848688;
       color: #ffffff;
       font-size: 16px;
-      line-height: 25px;
+      line-height: 20px;
       padding: 10px 0;
       text-decoration: none;
       text-shadow: none;
@@ -61,7 +94,7 @@
       box-shadow: none;
       transition: 0.25s;
       display: block;
-      width: 250px;
+      width: 200px;
       margin: 0 auto;
     }
     
