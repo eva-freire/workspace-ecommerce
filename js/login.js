@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
         if (username.value == "" || password.value == "") {
             alert("Ingrese los datos correspondientes");
-        } else {
+        } else { 
            window.location.href = "index.html";
         } 
     })
