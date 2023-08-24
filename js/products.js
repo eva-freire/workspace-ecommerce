@@ -1,8 +1,13 @@
-const DATA_AUTOS =  "https://japceibal.github.io/emercado-api/cats_products/101.json";
+const cat_id= localStorage.getItem('catID');
 
-const mostrarResultados = document.getElementById("autos");
+const BASE_API =  "https://japceibal.github.io/emercado-api/cats_products/";
+const CAT_PRODUCTS = BASE_API + cat_id + '.json';
 
-fetch(DATA_AUTOS)
+//selecciono el localstorage, creo una BASE_URL y a DATA_AUTOS le concateno catID y ".json"
+
+const mostrarResultados = document.getElementById("products");
+
+fetch(CAT_PRODUCTS)
     .then((response) => {
         if (!response.ok) {
             throw new Error('Error al cargar JSON');

@@ -11,15 +11,17 @@ if (username.value==""|| password.value=="") {
 }*/
 
 document.addEventListener("DOMContentLoaded", function(){
-    loginButton.addEventListener("click",function (event){
-        event.preventDefault(); //Puse esto provisorio mientras no tenemos que enviar nada a servidor. Evita que el -button type "submit"- refresque la pagina.
+    loginButton.addEventListener("click",function (event){ //Puse esto provisorio mientras no tenemos que enviar nada a servidor. Evita que el -button type "submit"- refresque la pagina.
 
         if (username.value == "" || password.value == "") {
             alert("Ingrese los datos correspondientes");
-        } else { 
+            event.preventDefault();
+        } else {
+           localStorage.setItem("user" , username.value);
+           localStorage.setItem("password", password.value);
            window.location.href = "index.html";
         } 
-    })
+    });
 });
 
 
