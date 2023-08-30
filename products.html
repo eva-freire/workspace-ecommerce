@@ -52,6 +52,37 @@
     <div>
         <h2 class="title">Autos</h2>
     </div>
+
+    <div id="filtro">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-6 col-md-12 mb-1 container">
+
+          <div class="row container p-0 m-0">
+            <div class="col">
+              <p class="text-end my-2">Precio.</p>
+            </div>
+
+            <div class="col">
+              <input class="form-control" type="text" placeholder="min." id="minimo">
+            </div>
+
+            <div class="col">
+              <input class="form-control" type="text" placeholder="máx." id="maximo">
+            </div>
+
+            <div class="col-3 p-0">
+
+              <div class="btn-group" role="group">
+                <button class="btn btn-light btn-block" id="filtrar">Filtrar</button>
+                <button class="btn btn-link btn-sm" id="limpiar">Limpiar</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
     
     <div id="products">
     </div>
@@ -75,7 +106,7 @@
   </div>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
-  <script src="js/products.js"></script>
+  <script src="js/products.js" defer></script>
 </body>
 
 </html>
