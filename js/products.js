@@ -1,8 +1,91 @@
 const cat_id= localStorage.getItem('catID');
 const BASE_API =  "https://japceibal.github.io/emercado-api/cats_products/";
-const CAT_PRODUCTS = BASE_API + cat_id + '.json';
+const url = BASE_API + cat_id + '.json';
+const productContainer = document.getElementById('products');
+let jsonData;
 
-//selecciono el localstorage, creo una BASE_URL y a DATA_AUTOS le concateno catID y ".json"
+async function getAndShowData () {
+    try {
+        const response = await fetch(url);
+        if(!response.ok) {
+            throw new Error('Error al cargar API');
+        }
+        jsonData = await response.json();
+        console.log(jsonData);
+        //ordena por precio de mayor a menor antes de mostrar productos
+        jsonData.products.sort((a, b) => parseFloat(b.cost) - parseFloat(a.cost)); 
+
+        //Muestra nombre de la categoria arriba del buscador
+        const categoryName=document.getElementById('categoryName'); 
+        categoryName.innerText += ` ${jsonData.catName.toLowerCase()}`;
+   
+        //llama a la función que mostrará los productos en la página
+        displayProducts(jsonData.products);
+        
+    } catch (error) {
+        console.log(error);
+        
+    }
+}
+
+getAndShowData();
+
+function displayProducts(products) {
+    let content = '';
+    products.forEach(product => {
+        content += `
+        <div onclick="setProdId(${product.id})" class="product">
+            <div class="product-div-img">
+            <img class="product-img" src="${product.image}" alt="${product.name}">
+            </div>
+            
+            <div class="product-details">
+                <h2 class="product-name">${product.name}</h2>
+                <small class="text-muted">` + product.soldCount + ` artículos vendidos</small>
+                <p class="product-description">${product.description}</p>
+                <p class="product-cost">Precio: ${product.currency} ${product.cost}</p>
+            </div>
+        </div>
+    `;
+    }); productContainer.innerHTML = content;
+
+}
+
+function setProdId (id){
+    localStorage.setItem('productID',id);
+    window.location  = "product-info.html"
+    
+}
+
+
+
+
+/*
+htmlContentToAppend += `
+            <div onclick="setCatID(${category.id})" class="list-group-item list-group-item-action cursor-active">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="${category.imgSrc}" alt="${category.description}" class="img-thumbnail">
+                    </div>
+                    <div class="col">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h4 class="mb-1">${category.name}</h4>
+                            <small class="text-muted">${category.productCount} artículos</small>
+                        </div>
+                        <p class="mb-1">${category.description}</p>
+                    </div>
+                </div>
+            </div>
+            `
+
+
+
+
+*/
+
+
+
+/*//selecciono el localstorage, creo una BASE_URL y a DATA_AUTOS le concateno catID y ".json"
 
 const mostrarResultados = document.getElementById("products");
 
@@ -86,30 +169,7 @@ filterButton.addEventListener('click', ()=>{
 
 
 
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+});*/
 
 
 
@@ -158,20 +218,3 @@ filterButton.addEventListener('click', ()=>{
     .catch((error)=>{
         console.log(error);
     });*/
-
-
-
-
-
-
-
-
-
-
-   
-
-    
-
-
-
-   

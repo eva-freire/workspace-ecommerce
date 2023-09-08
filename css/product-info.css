@@ -1,0 +1,104 @@
+.product-container{
+    padding: 50px;
+    margin: 60px;
+    border-radius: 5px;
+    background-color: rgba(220, 219, 218, 0.269);
+}
+
+.product-card{
+    min-width: 100%;
+    width: 80%;
+    padding: 20px;
+    background-color:rgb(255, 255, 255);
+    border-radius: 3px;
+
+}
+.prod-images{
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items:center;
+    
+   
+}
+.product-img{
+    min-width: 20%;
+    max-width: 50%;
+    width: 200px;
+    padding: 5px;
+    
+}
+.product-img:hover{
+    transform: scale(1.03);
+}
+.buttons{
+    padding: 10px;
+    margin: 5px;
+
+}
+button{
+    border: 2px solid transparent;
+    border-radius: 5px;
+    padding: 5px;
+    border: 2px groove;
+}
+
+#addBtn:hover{
+    background-color: rgb(255, 163, 65);
+    
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.comment-section {
+    padding: 40px;
+    margin: 60px;
+    background-color: rgba(220, 219, 218, 0.333);
+    border-radius: 5px;
+}
+
+.comments{
+    padding:10px 0px; 
+}
+
+
+.comment-wrapper{
+background-color: rgba(253, 253, 253, 0.816);
+margin-left: 10px;
+margin-top: 15px;
+padding: 10px;
+border-radius: 5px;
+}
+
+.comment-wrapper:hover{
+    background-color: rgba(199, 244, 246, 0.444);
+}
+
+.comment-user{
+    font-weight:600;
+}
+
+.rating {
+    color: orange; /* Color de las estrellas seleccionadas */
+}
+
+.checked {
+    color: gold; /* Color de las estrellas seleccionadas */
+}
+
+.score-title{
+    color: black;
+    font-size: small;
+}
+
+.comment_date{
+    font-size: small;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
+
